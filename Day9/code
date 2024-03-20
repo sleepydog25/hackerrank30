@@ -19,6 +19,7 @@ class Result {
      * The function accepts INTEGER n as parameter.
      */
 
+//answer below
     public static int factorial(int n) {
     if (n == 1)
       return 1;
