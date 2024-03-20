@@ -1,4 +1,5 @@
-Recursive Method for Calculating Factorial
+Recursive Method for Calculating Factorial  
+
                  1       N<=1  
                  
  Factorial(N) {  
