@@ -1,7 +1,11 @@
 Recursive Method for Calculating Factorial
-                 1       N<=1
- Factorial(N) {
-                 N      
+                 1       N<=1  
+                 
+ Factorial(N) {  
+ 
+                 N * Factorial(N-1)           otherwise
+
+                 
 # Function Description
 Complete the factorial function in the editor below. Be sure to use recursion.
 
