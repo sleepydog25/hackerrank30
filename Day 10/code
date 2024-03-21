@@ -45,6 +45,7 @@ public class Solution {
                 }
             } else {
                 count = 0;
+                maxCount = count;
             }
         }
  
