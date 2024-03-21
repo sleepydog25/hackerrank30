@@ -1,0 +1,55 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.function.*;
+import java.util.regex.*;
+import java.util.stream.*;
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.toList;
+
+
+
+public class Solution {
+
+ public static void main(String[] args) {
+     Scanner s = new Scanner (System.in);
+        int Number = s.nextInt();
+        ArrayList <String> array = new ArrayList<String>();
+ 
+        // Convert the integer to binary
+        
+        //insert remainder inside the array
+        while (Number>0){
+            int remainder = Number%2;
+            
+          // System.out.println(remainder);  //testing 
+            Number = Number/2;
+            array.add(Integer.toString(remainder));
+        }
+        
+        //concat the index in arraylist
+        String buffer =array.stream().collect(Collectors.joining(""));
+
+        int count = 0;
+        int maxCount = 0;
+ 
+        // Loop through the binary string to find the longest consecutive 1s
+        for (int i = 0; i < buffer.length(); i++) {
+            if (buffer.charAt(i) == '1') {
+                count++;
+                if (count > maxCount) {
+                    maxCount = count;
+                }
+            } else {
+                count = 0;
+            }
+        }
+ 
+        // Print the result
+        System.out.println(maxCount);
+    }
+    
+}
