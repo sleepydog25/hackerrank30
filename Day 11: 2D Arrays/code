@@ -1,0 +1,107 @@
+/*
+This is the most idiotic way to solve the problem.
+Code refactoring required!!*/
+
+//reading test case by hackerrank
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.function.*;
+import java.util.regex.*;
+import java.util.stream.*;
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.toList;
+
+
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+
+        List<List<Integer>> arr = new ArrayList<>();
+
+        IntStream.range(0, 6).forEach(i -> {
+            try {
+                arr.add(
+                    Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
+                        .map(Integer::parseInt)
+                        .collect(toList())
+                );
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
+
+        bufferedReader.close();
+
+
+//---------------------My code starts here---------------------------------------
+
+
+        ArrayList <Integer> newarr0 = new ArrayList <Integer>();
+        
+        
+        //the first layer of the hour glass
+        for (int i =0; i<4;i++){
+            for(int j=0;j<4;j++){
+                int value = arr.get(i).get(j);
+                //System.out.print(value+"/");
+                int value2 = arr.get(i).get(j+1);
+                //System.out.print(value2+"/");
+                int value3 = arr.get(i).get(j+2);
+                //System.out.print(value3+"/");
+                int temp = value+value2+value3;
+                //System.out.println(temp);
+                newarr0.add(temp);                  
+            }    
+        }
+        /* testing
+        for (int k = 0; k < newarr0.size(); k++) {
+        System.out.print(newarr0.get(k)+" "); }
+        */
+        
+        //the third layer of the hour glass
+        ArrayList <Integer> newarr2 = new ArrayList <Integer>();
+        
+         for (int i =0; i<4;i++){
+            for(int j=0;j<4;j++){
+                int value = arr.get(i+2).get(j);
+                //System.out.print(value+"/");
+                int value2 = arr.get(i+2).get(j+1);
+                //System.out.print(value2+"/");
+                int value3 = arr.get(i+2).get(j+2);
+                //System.out.print(value3+"/");
+                int temp = value+value2+value3;
+                //System.out.println(temp);
+                newarr2.add(temp);                  
+            }    
+        }
+        
+        //the second layer of the hour glass
+    ArrayList <Integer> newarr1 = new ArrayList <Integer>();
+        
+         for (int i =0; i<4;i++){
+            for(int j=0;j<4;j++){
+                int value = arr.get(i+1).get(j+1);
+                //System.out.print(value);
+                newarr1.add(value);                 
+            }    
+        }
+        
+        //adding the all layers together
+        int temp = 0;
+        int maxtemp = Integer.MIN_VALUE;
+        
+        for (int i=0;i<newarr0.size();i++){
+            temp = newarr0.get(i) + newarr1.get(i) + newarr2.get(i);
+            if( temp >maxtemp)
+            maxtemp = temp;
+        }
+        System.out.print(maxtemp);
+
+                
+    }
+}
