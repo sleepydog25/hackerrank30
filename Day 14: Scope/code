@@ -1,0 +1,45 @@
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        //reading input
+        Scanner scanner = new Scanner(System.in);
+        int N = scanner.nextInt();
+        List<Integer> arr = new ArrayList<>();
+
+        while (scanner.hasNext()) {
+            arr.add(scanner.nextInt());
+        }
+        // call difference
+        Difference difference = new Difference(N, arr);
+        difference.getMaxAbsoluteDifference();
+    }
+}
+
+class Difference {
+    private int N;
+    private List<Integer> arr;
+    
+    
+    //constructor
+    public Difference(int N, List<Integer> arr) {
+        this.N = N;
+        this.arr = arr;
+    }
+    
+    
+    //get the biggerst absolute number in the array
+    public void getMaxAbsoluteDifference() {
+        int maxDifference = Integer.MIN_VALUE;
+
+        for (int i = 0; i < N; i++) {
+            for (int k = i + 1; k < N; k++) {
+                int difference = Math.abs(arr.get(k) - arr.get(i));
+                maxDifference = Math.max(maxDifference, difference);
+            }
+        }
+        System.out.print(maxDifference);
+    }
+}
