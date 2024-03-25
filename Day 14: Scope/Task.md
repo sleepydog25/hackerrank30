@@ -15,5 +15,5 @@ STDIN   Function
 ### Sample Output
 4
 
-#### The full description of the problem is in the website below:
+### The full description of the problem is in the website below:
 https://www.hackerrank.com/challenges/30-scope/problem?isFullScreen=true
