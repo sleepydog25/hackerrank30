@@ -7,10 +7,11 @@ A computeDifference method that finds the maximum absolute difference between an
 
 ### Sample Input
 
-STDIN   Function
------   --------
-3       __elements[] size N = 3
-1 2 5   __elements = [1, 2, 5]
+STDIN  /  Function 
+
+3 /  __elements[] size N = 3 
+
+1 2 5    /  __elements = [1, 2, 5]
 
 ### Sample Output
 4
