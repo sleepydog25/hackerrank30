@@ -1,0 +1,33 @@
+/*
+// the wrong way to crack the problem
+//By importing Java API you can crack it less than a minute.....
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        List <Integer> list = new LinkedList<>();
+        Scanner s = new Scanner(System.in);
+        int listnum = s.nextInt();//the first line of input
+        
+        //add numbers in the linked list
+        while (s.hasNext()){
+            list.add(s.nextInt());
+        }
+        
+        for (Integer a: list){
+            System.out.print(a+" ");
+        }
+
+        
+
+    }
+}
+*/
+
+
+
+
